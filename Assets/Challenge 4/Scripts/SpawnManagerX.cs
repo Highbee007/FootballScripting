@@ -49,7 +49,7 @@ public class SpawnManagerX : MonoBehaviour
         }
 
         // Spawn number of enemy balls based on wave number
-        for (int i = 0; i < enemiesToSpawn; i++)
+        for (int i = 0; i < 2; i++)
         {
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
         }
@@ -63,8 +63,8 @@ public class SpawnManagerX : MonoBehaviour
     void ResetPlayerPosition ()
     {
         player.transform.position = new Vector3(0, 1, -7);
-        //player.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-        //player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        player.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
     }
 
