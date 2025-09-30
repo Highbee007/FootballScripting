@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyX : MonoBehaviour
 {
-    private float speed = 1f;
     private Rigidbody enemyRb;
     private GameObject playerGoal;
+    private float speed = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class EnemyX : MonoBehaviour
     {
         // Set enemy direction towards player goal and move there
         Vector3 lookDirection = (playerGoal.transform.position - transform.position).normalized;
-        enemyRb.AddForce(lookDirection * speed * Time.deltaTime, ForceMode.Impulse);
+        enemyRb.AddForce(speed * Time.deltaTime * lookDirection, ForceMode.Impulse);
 
     }
 
